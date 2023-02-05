@@ -8,6 +8,7 @@ namespace StorageExample
 {
     public static class Menu
     {
+        //Test comment
         public static void PrintMenu()
         {
             Console.WriteLine("Type 'A' to create a new storage");
