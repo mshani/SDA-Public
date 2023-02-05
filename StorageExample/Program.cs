@@ -1,29 +1,13 @@
 ﻿using StorageExample;
 
-var storage = new Storage();
-storage.AddStorage("std1", "a");
-storage.AddStorage("std1", "b");
-storage.AddStorage("std1", "b");
-storage.AddStorage("std2", "c");
-storage.AddStorage("std2", "a");
-
-storage.PrintValues("std1");
-var keys = storage.FindKeys("a");
-if(keys != null)
+Menu.PrintMenu();
+Storage storage = new Storage();
+var option = Console.ReadLine();
+while (option.ToUpper().Trim() != "EXIT")
 {
-    Console.Write("Keys: ");
-    foreach (var element in keys)
-    {
-        if(keys.Last() != element)
-        {
-            Console.Write(element + ", ");
-        }
-        else
-        {
-            Console.Write(element);
-        }
-    }
-    Console.WriteLine();
+    Menu.ExecuteOption(option, storage);
+    Menu.PrintMenu();
+    option = Console.ReadLine();
 }
 
 

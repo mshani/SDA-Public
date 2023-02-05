@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StorageExample
 {
-    internal class Storage
+    public class Storage
     {
         private Dictionary<string, List<string>> map = new Dictionary<string, List<string>>();
 
@@ -31,16 +31,24 @@ namespace StorageExample
                 }
             }
         }
-        public void PrintValues(string key) { 
-            var elements = map[key];
-            if(elements != null){
-                foreach (var element in elements)
+        public void PrintValues(string key) {
+            if (map.ContainsKey(key))
+            {
+                var elements = map[key];
+                if (elements != null)
                 {
-                    Console.WriteLine($"Key: {key}, value: {element}");
+                    foreach (var element in elements)
+                    {
+                        Console.WriteLine($"Key: {key}, value: {element}");
+                    }
                 }
             }
+            else
+            {
+                Console.WriteLine("Key is not present");
+            }
+            
         }
-
         public List<string> FindKeys(string value) {
             var keyList = new List<string>();
             foreach(var element in map) {
