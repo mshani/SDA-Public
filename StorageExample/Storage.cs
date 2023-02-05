@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StorageExample
-{//test comment -- dile
-
+﻿namespace StorageExample
+{
     public class Storage
     {
         private Dictionary<string, List<string>> map = new Dictionary<string, List<string>>();
